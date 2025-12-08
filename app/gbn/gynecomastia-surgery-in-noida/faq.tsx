@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from "react";
 import { FiPlus, FiMinus } from "react-icons/fi";
@@ -23,7 +23,7 @@ function FAQ() {
     }
   ];
 
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
     <div className="space-y-4">
@@ -60,4 +60,5 @@ function FAQ() {
     </div>
   );
 }
+
 export default FAQ;
