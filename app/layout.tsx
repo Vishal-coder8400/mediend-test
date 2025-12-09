@@ -1,104 +1,89 @@
-// app/layout.tsx
-// NO "use client"; here if you want generateMetadata to work as expected at the root.
+import type { Metadata } from "next";
+import Script from "next/script";
+import { MantineProvider } from "@mantine/core";
+import { theme } from "../theme";
+import { Providers } from "./Providers";
+import AOSContainer from "./components/AOS/AOS";
+import ClientSpecificLogic from "./components/Client-Layout";
 
-import { Metadata } from 'next';
-import { MantineProvider } from "@mantine/core"; // Keep
-import { theme } from "../theme"; // Keep
-import Header from "./components/Header/Header"; // Keep
-import Footer from "./components/Footer/Footer"; // Keep
-import { Providers } from "./Providers"; // Keep
-import AOSContainer from "./components/AOS/AOS"; // Keep
-import ClientSpecificLogic from './components/Client-Layout'; // NEW: Component for client-side logic
-
-// Your global CSS imports
+// CSS Imports
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 import "@mantine/notifications/styles.css";
 import "./global.css";
 import "react-multi-carousel/lib/styles.css";
 
-// Define your default metadata
 export const metadata: Metadata = {
-  // It's good practice to set metadataBase
-  metadataBase: new URL('https://mediend.com'),
+  metadataBase: new URL("https://mediend.com"),
+
   title: {
-    default: 'mediEND - Expert Surgical Care | Gynecomastia, Lipoma Surgery & More', // Fallback title
-    template: '%s | mediEND', // %s will be replaced by title from inner routes
+    default:
+      "mediEND - Expert Surgical Care | Gynecomastia, Lipoma Surgery & More",
+    template: "%s | mediEND",
   },
-  description: 'We offer expert surgical care from experienced surgeons, specializing in Lipoma, Gynecomastia, Bariatric, Piles, Lasik, and more. Enjoy affordable pricing and our free pick-up & drop facility for a seamless experience.',
-  // Viewport is usually handled by Next.js, but you can customize if needed
-  // viewport: 'minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no',
+
+  description:
+    "We offer expert surgical care from experienced surgeons, specializing in Lipoma, Gynecomastia, Bariatric, Piles, Lasik, and more.",
+
   openGraph: {
-    title: 'mediEND - Expert Surgical Care | Gynecomastia, Lipoma Surgery & More',
-    description: 'We offer expert surgical care from experienced surgeons...',
-    url: '/', // This will be relative to metadataBase if set
-    siteName: 'mediEND',
-    images: [
-      {
-        url: '/logo.png', // Assuming logo.png is in your /public folder
-        width: 1200, // Optional
-        height: 630, // Optional
-      },
-    ],
-    type: 'website',
+    title:
+      "mediEND - Expert Surgical Care | Gynecomastia, Lipoma Surgery & More",
+    description:
+      "We offer expert surgical care with affordable pricing, comfort, and free pick-up & drop.",
+    url: "/",
+    siteName: "mediEND",
+    images: [{ url: "/logo.png", width: 1200, height: 630 }],
+    type: "website",
   },
+
   twitter: {
-    card: 'summary_large_image',
-    title: 'mediEND - Expert Surgical Care | Gynecomastia, Lipoma Surgery & More',
-    description: 'We offer expert surgical care from experienced surgeons...',
-    images: ['/logo.png'], // Assuming logo.png is in your /public folder
+    card: "summary_large_image",
+    title:
+      "mediEND - Expert Surgical Care | Gynecomastia, Lipoma Surgery & More",
+    description: "Trusted surgical solutions with premium specialists.",
+    images: ["/logo.png"],
   },
-  robots:{
-    index:true,
-    follow:true,
-  }
-  // Add other global meta tags here if needed
+
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // The useEffect for document.title is REMOVED from here.
-  // The logic for mainClasses and isAdsPage will move to ClientSpecificLogic.
-
   return (
-    <html lang="en" suppressHydrationWarning> {/* suppressHydrationWarning may be needed if Mantine/other libs cause issues without "use client" at root */}
+    <html lang="en" suppressHydrationWarning>
       <head>
-        {/*
-          Meta tags like viewport, description, OG tags defined above via `export const metadata`
-          will be automatically handled by Next.js.
-          You only need to include things here that Next.js doesn't handle via the Metadata API,
-          like custom font links or external scripts.
-        */}
+        {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossOrigin="anonymous" // Use "anonymous" for crossOrigin with fonts
+          crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
           rel="stylesheet"
         />
-        {/* Google Analytics Script - This is fine here */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-29YDLX52BY"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-29YDLX52BY');
-            `,
-          }}
-        />
       </head>
+
       <body>
+        {/* Google Analytics using next/script */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-29YDLX52BY"
+        />
+
+        <Script id="ga-init">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-29YDLX52BY');
+          `}
+        </Script>
+
         <Providers>
           <AOSContainer>
-            <MantineProvider defaultColorScheme="light" theme={theme}>
-              {/* Wrap parts that need client-side logic */}
-              <ClientSpecificLogic>
-                {children}
-              </ClientSpecificLogic>
+            <MantineProvider theme={theme} defaultColorScheme="light">
+              <ClientSpecificLogic>{children}</ClientSpecificLogic>
             </MantineProvider>
           </AOSContainer>
         </Providers>
