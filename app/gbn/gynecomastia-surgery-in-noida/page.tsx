@@ -787,20 +787,23 @@ export default function Page() {
 
 {/* NEED HELP SECTION – EXACT SAME DESIGN BUT TEAL */}
 {/* 🌟 1. NEED HELP SECTION */}
-<section className="w-full bg-[#14967F] py-10 md:py-16 mt-10">
+
+<section className="w-full bg-[#14967F] py-6 md:py-10 mt-10">
   <div className="max-w-[1200px] mx-auto px-6 text-center">
 
-    <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-6 md:mb-8">
+    <h2 className="text-xl md:text-3xl font-extrabold text-white mb-4 md:mb-6">
       Need Help ?
     </h2>
 
-    <button className="
-      bg-black text-white font-semibold
-      px-6 py-3 md:px-10 md:py-4
-      rounded-full text-base md:text-lg
-      w-[200px] md:w-auto mx-auto
-      hover:opacity-90 transition
-    ">
+    <button
+      className="
+        bg-black text-white font-semibold
+        px-5 py-2.5 md:px-8 md:py-3
+        rounded-full text-sm md:text-base
+        w-[160px] md:w-auto mx-auto
+        hover:opacity-90 transition
+      "
+    >
       Get a Call Back
     </button>
 
@@ -823,19 +826,19 @@ export default function Page() {
 
 
 {/* 🌟 3. GET FREE DOCTOR CONSULTATION SECTION */}
-<section className="w-full bg-[#14967F] py-10 md:py-16 sticky bottom-0 z-40">
+<section className="w-full bg-[#14967F] py-6 md:py-10 sticky bottom-0 z-40">
   <div className="max-w-[1200px] mx-auto px-6 text-center">
 
-    <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-6 md:mb-8">
+    <h2 className="text-xl md:text-3xl font-extrabold text-white mb-4 md:mb-6">
       Get Free Doctor Consultation
     </h2>
 
     <button
       className="
         bg-black text-white font-semibold
-        px-6 py-3 md:px-10 md:py-4
-        rounded-full text-base md:text-lg
-        w-[200px] md:w-auto mx-auto
+        px-5 py-2.5 md:px-8 md:py-3
+        rounded-full text-sm md:text-base
+        w-[160px] md:w-auto mx-auto
         hover:opacity-90 transition
       "
     >
