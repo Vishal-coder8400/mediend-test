@@ -848,11 +848,12 @@ export default function Page() {
 {/* 🌟 3. GET FREE DOCTOR CONSULTATION SECTION */}
 <section
   className="
-    w-full bg-[#14967F]
+        w-full bg-[#14967F]
     py-3 md:py-5 lg:py-6
     fixed bottom-0 left-0 right-0
-    md:sticky md:bottom-0
-    z-50
+    md:sticky md:bottom-0 md:top-auto
+    z-[9999]
+
   "
 >
   <div className="max-w-[1200px] mx-auto px-4 text-center">
