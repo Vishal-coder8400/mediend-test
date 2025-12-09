@@ -843,28 +843,44 @@ export default function Page() {
       </footer>
 
 
-      {/* 🌟 3. GET FREE DOCTOR CONSULTATION SECTION */}
-      <section className="w-full bg-[#14967F] py-6 md:py-10 sticky bottom-0 z-40">
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
+   {/* 🌟 3. GET FREE DOCTOR CONSULTATION SECTION */}
+<section
+  className="
+    w-full bg-[#14967F] 
+    py-3              /* reduced from py-6 → py-3 */
+    md:py-10 
+    sticky bottom-0 z-40
+  "
+>
+  <div className="max-w-[1200px] mx-auto px-4 text-center">
 
-          <h2 className="text-xl md:text-3xl font-extrabold text-white mb-4 md:mb-6">
-            Get Free Doctor Consultation
-          </h2>
+    <h2
+      className="
+        text-[15px] font-extrabold text-white 
+        mb-2
+        md:text-3xl md:mb-6
+      "
+    >
+      Get Free Doctor Consultation
+    </h2>
 
-          <button
-            className="
-              bg-black text-white font-semibold
-              px-5 py-2.5 md:px-8 md:py-3
-              rounded-full text-sm md:text-base
-              w-[160px] md:w-auto mx-auto
-              hover:opacity-90 transition
-            "
-          >
-            Book Now
-          </button>
+    <button
+      className="
+        bg-black text-white font-semibold
+        px-4 py-1.5               /* smaller button */
+        md:px-8 md:py-3
+        rounded-full 
+        text-[12px]               /* smaller mobile text */
+        md:text-base
+        w-[120px] mx-auto         /* button narrower on mobile */
+        hover:opacity-90 transition
+      "
+    >
+      Book Now
+    </button>
 
-        </div>
-      </section>
+  </div>
+</section>
 
     </>
   );
