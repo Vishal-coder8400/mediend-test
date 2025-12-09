@@ -53,7 +53,7 @@ export default function Page() {
       "
     >
       Permanent Surgery for <br />
-      Gynecomastia in <span className="text-[#14967F]">Noida</span>
+      Gynecomastia in <span className="text-[#2563EB]">Noida</span>
     </h1>
 
     {/* Bullet List — mobile = ✓, desktop = ● yellow */}
