@@ -6,8 +6,10 @@ export default function Page() {
   return (
     <>
       {/* STATIC LANDING HEADER */}
-  {/* STATIC LANDING HEADER */}
-<div className="w-full bg-[#062D4C] h-[70px] flex items-center px-4">
+{/* STATIC LANDING HEADER */}
+<div
+  className="fixed top-0 left-0 w-full bg-[#062D4C] h-[70px] flex items-center px-4 z-[9999]"
+>
   <div className="flex w-full justify-between items-center">
 
     {/* Logo */}
@@ -24,6 +26,10 @@ export default function Page() {
 
   </div>
 </div>
+
+{/* Add margin-top so content doesn’t hide behind header */}
+<div className="mt-[70px]"></div>
+
 
       {/* HERO SECTION */}
 {/* HERO SECTION */}
