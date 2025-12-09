@@ -829,36 +829,39 @@ export default function Page() {
       </section>
 
 
-      {/* 🌟 2. FOOTER SECTION */}
-      <footer className="w-full bg-[#F3F3F3] py-6 text-center">
+     {/* 🌟 2. FOOTER SECTION */}
+<footer className="w-full bg-[#F3F3F3] py-6 text-center">
 
-        <p className="text-[14px] font-semibold text-gray-800 mb-1">
-          ©2023 MediEnd. All Rights Reserved
-        </p>
+  <p className="text-[14px] font-semibold text-gray-800 mb-1">
+    ©2023 MediEnd. All Rights Reserved
+  </p>
 
-        <p className="text-[12px] text-gray-600">
-          DISCLAIMER: The result and experience may vary from patient to patient.
-        </p>
+  <p className="text-[12px] text-gray-600">
+    DISCLAIMER: The result and experience may vary from patient to patient.
+  </p>
 
-      </footer>
+</footer>
 
+{/* ⭐ Mobile safety spacer so footer doesn't hide sticky bar */}
+<div className="h-[85px] md:h-0"></div>
 
-   {/* 🌟 3. GET FREE DOCTOR CONSULTATION SECTION */}
+{/* 🌟 3. GET FREE DOCTOR CONSULTATION SECTION */}
 <section
   className="
-    w-full bg-[#14967F] 
-    py-3              /* reduced from py-6 → py-3 */
-    md:py-10 
-    sticky bottom-0 z-40
+    w-full bg-[#14967F]
+    py-3 md:py-5 lg:py-6
+    fixed bottom-0 left-0 right-0
+    md:sticky md:bottom-0
+    z-50
   "
 >
   <div className="max-w-[1200px] mx-auto px-4 text-center">
 
     <h2
       className="
-        text-[15px] font-extrabold text-white 
-        mb-2
-        md:text-3xl md:mb-6
+        text-[15px] font-extrabold text-white mb-2
+        md:text-[22px] lg:text-[24px]
+        md:mb-3 lg:mb-4
       "
     >
       Get Free Doctor Consultation
@@ -867,12 +870,14 @@ export default function Page() {
     <button
       className="
         bg-black text-white font-semibold
-        px-4 py-1.5               /* smaller button */
-        md:px-8 md:py-3
-        rounded-full 
-        text-[12px]               /* smaller mobile text */
-        md:text-base
-        w-[120px] mx-auto         /* button narrower on mobile */
+        inline-block
+        px-4 py-1.5
+        md:px-5 md:py-2
+        lg:px-6 lg:py-2
+        rounded-full
+        text-[12px]
+        md:text-[14px] lg:text-[15px]
+        w-auto mx-auto
         hover:opacity-90 transition
       "
     >
@@ -881,6 +886,8 @@ export default function Page() {
 
   </div>
 </section>
+
+
 
     </>
   );
