@@ -25,131 +25,156 @@ export default function Page() {
         </div>
       </div>
 
-      {/* Spacer for Header — Matched to 60px to remove gap */}
-      <div className="mt-[60px]"></div>
+
+<section className="
+  w-full max-w-[1300px] mx-auto
+  px-3 
+  pt-1 pb-3               /* ↓ reduced height */
+  grid grid-cols-2 lg:grid-cols-3 
+  gap-x-2 gap-y-2         /* ↓ smaller vertical gap */
+  items-center
+  md:pt-0 md:pb-6         /* desktop stays SAME */
+
+">
+
+  {/* COL 1: TEXT CONTENT */}
+  <div className="col-span-1 flex flex-col justify-start mt-1">
+
+    {/* Heading */}
+    <h1
+      className="
+        font-extrabold text-black leading-[1.15]
+
+        /* MOBILE */
+        text-[22px] mb-2
+
+        /* DESKTOP RESTORE */
+        md:text-[32px] lg:text-[42px] md:leading-[1.1] md:mb-4
+      "
+    >
+      Permanent Surgery for <br />
+      Gynecomastia in <span className="text-[#14967F]">Noida</span>
+    </h1>
+
+    {/* Bullet List — mobile = ✓, desktop = ● yellow */}
+    <ul className="space-y-1 font-semibold text-black mb-3">
+
+      {/* Bullet 1 */}
+      <li className="flex items-center gap-2">
+        {/* MOBILE CHECKMARK */}
+        <span className="text-[#14967F] text-[18px] md:hidden">✓</span>
+
+        {/* DESKTOP ORANGE BULLET */}
+        <span className="hidden md:inline-block text-orange-400 text-[22px]">●</span>
+
+        <span className="text-[14px] md:text-[18px]">
+          All Insurances Accepted
+        </span>
+      </li>
+
+      {/* Bullet 2 */}
+      <li className="flex items-center gap-2">
+        <span className="text-[#14967F] text-[18px] md:hidden">✓</span>
+        <span className="hidden md:inline-block text-orange-400 text-[22px]">●</span>
+
+        <span className="text-[14px] md:text-[18px]">
+          Permanent Result
+        </span>
+      </li>
+
+      {/* Bullet 3 */}
+      <li className="flex items-center gap-2">
+        <span className="text-[#14967F] text-[18px] md:hidden">✓</span>
+        <span className="hidden md:inline-block text-orange-400 text-[22px]">●</span>
+
+        <span className="text-[14px] md:text-[18px]">
+          No-Cost EMI Available
+        </span>
+      </li>
+
+    </ul>
+
+    {/* FREE CONSULTATION BADGE */}
+    <div className="
+      border border-[#062D4C] rounded-md px-3 py-1.5 
+      inline-flex items-center gap-1.5 w-fit 
+      bg-white shadow-sm
+    ">
+      <span className="font-bold text-[#062D4C] text-[10px] md:text-[12px] leading-tight">
+        FREE <br /> CONSULTATION
+      </span>
+
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#062D4C" strokeWidth="2">
+        <path d="M6 3v12a4 4 0 0 0 8 0v-4" />
+        <path d="M14 11a4 4 0 0 0 8 0V5" />
+        <path d="M6 3a4 4 0 0 1 8 0" />
+      </svg>
+    </div>
+
+  </div>
+
+  {/* COL 2: IMAGE */}
+
+<div
+  className="
+    col-span-1 
+    flex justify-center items-start
+    -mt-8              /* pulled more up */
+    md:mt-0
+  "
+>
+  <img
+    src="/assets/diseases/Gynecomastia1.webp"
+    className="
+      /* MOBILE */
+      w-full
+      max-w-[410px]     /* slightly bigger (from 390px → 410px) */
+      scale-[1.24]      /* increase size (from 1.20 → 1.24) */
+      object-contain
+      -mt-5             /* removes remaining top white gap */
+
+      /* DESKTOP */
+      md:scale-100
+      md:max-w-[480px]
+      lg:max-w-[540px]
+    "
+  />
+</div>
 
 
-      {/* 2. HERO SECTION — Compact Layout */}
-      <section className="
-        w-full max-w-[1300px] mx-auto
-        px-3 pt-3 pb-4
-        grid grid-cols-2 lg:grid-cols-3 
-        gap-x-2 gap-y-3 items-start
-      ">
 
-        {/* LEFT COL: Text + Bullets + Badge */}
-        <div className="col-span-1 flex flex-col justify-start z-10">
-          <h1 className="
-            font-extrabold text-black leading-[1.1]
-            text-[17px] sm:text-[22px] md:text-[28px] lg:text-4xl
-            mb-2
-          ">
-            Permanent Surgery for <br />
-            Gynecomastia in <span className="text-[#2563EB]">Noida</span>
-          </h1>
+  {/* COL 3: FORM */}
+  <div className="
+    col-span-2 lg:col-span-1
+    w-full mt-2 lg:mt-0
+    bg-[#E0F7FA] lg:bg-white
+    rounded-2xl shadow-sm lg:shadow-xl
+    p-5 lg:p-8
+    border border-teal-100 lg:border-none
+  ">
+    <h2 className="text-[18px] lg:text-2xl font-extrabold text-black mb-3 text-center lg:text-left">
+      Get Rid of Gynecomastia
+    </h2>
 
-          {/* Bullet Points */}
-          <ul className="
-            font-bold text-gray-800 
-            text-[10px] sm:text-[14px] lg:text-[18px]
-            space-y-1 mb-3
-          ">
-            <li className="flex items-center gap-1.5">
-              <span className="text-[#14967F] text-lg leading-none">|</span>
-              All Insurances Accepted
-            </li>
-            <li className="flex items-center gap-1.5">
-              <span className="text-[#14967F] text-lg leading-none">|</span>
-              Permanent Result
-            </li>
-            <li className="flex items-center gap-1.5">
-              <span className="text-[#14967F] text-lg leading-none">|</span>
-              No-Cost EMI Available
-            </li>
-          </ul>
+    <input
+      type="text"
+      placeholder="Your Name *"
+      className="w-full bg-white border border-gray-300 rounded-full px-4 py-3 mb-3 outline-none text-sm text-gray-700 focus:border-[#14967F] shadow-sm"
+    />
 
-          {/* ⭐ MISSING PART FIXED: Free Consultation Badge ⭐ */}
-          <div className="border border-[#062D4C] rounded-lg px-2 py-1 inline-flex items-center gap-2 w-fit bg-[#E3F2FD]">
-            <span className="font-extrabold text-[#062D4C] text-[10px] leading-tight">
-              FREE <br/> CONSULTATION
-            </span>
-             {/* Stethoscope Icon Representation */}
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#062D4C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M6 3v12a4 4 0 0 0 8 0v-4" />
-              <path d="M14 11a4 4 0 0 0 8 0V5" />
-              <path d="M6 3a4 4 0 0 1 8 0" />
-            </svg>
-          </div>
-        </div>
+    <input
+      type="text"
+      placeholder="Mobile Number *"
+      className="w-full bg-white border border-gray-300 rounded-full px-4 py-3 mb-4 outline-none text-sm text-gray-700 focus:border-[#14967F] shadow-sm"
+    />
 
+    <button className="w-full bg-[#14967F] text-white font-bold py-3 rounded-full text-[16px] shadow hover:opacity-90 transition">
+      Get Cost Estimate Now
+    </button>
+  </div>
 
-        {/* RIGHT COL: Image Collage — Tighter Positioning */}
-        <div className="
-          col-span-1
-          relative 
-          w-full h-[140px] lg:h-[400px]
-          flex justify-end
-        ">
-          <div className="
-            relative
-            w-[140px] h-[140px]
-            lg:w-[400px] lg:h-[400px]
-          ">
-            {/* Top Left */}
-            <div className="absolute top-0 left-1 w-[42px] h-[42px] lg:w-[130px] lg:h-[130px] rotate-45 overflow-hidden border-2 border-white shadow-sm rounded-lg">
-               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuQJOyg_mPA2uRqzXqWm4x33naOdZziTPjnA&s" className="w-full h-full object-cover -rotate-45" />
-            </div>
-            {/* Top Right */}
-            <div className="absolute top-0 right-1 w-[42px] h-[42px] lg:w-[130px] lg:h-[130px] rotate-45 overflow-hidden border-2 border-white shadow-sm rounded-lg">
-               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYULljRVodCGbF3Y-5T4IbnZBVURUpj4JPtw&s" className="w-full h-full object-cover -rotate-45" />
-            </div>
-            {/* Bottom Left */}
-            <div className="absolute bottom-6 left-1 w-[42px] h-[42px] lg:w-[130px] lg:h-[130px] rotate-45 overflow-hidden border-2 border-white shadow-sm rounded-lg">
-               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkCw9k6aB2C-OCT7FXipJzK6QKp2mBhNGFspjRKfDicw&s" className="w-full h-full object-cover -rotate-45" />
-            </div>
-            {/* Bottom Right */}
-            <div className="absolute bottom-6 right-1 w-[42px] h-[42px] lg:w-[130px] lg:h-[130px] rotate-45 overflow-hidden border-2 border-white shadow-sm rounded-lg">
-               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJPLV2iKy4aRbrxAwa2g4_mGDWUzeqEJstVc647_8MVw&s" className="w-full h-full object-cover -rotate-45" />
-            </div>
-            {/* Center */}
-            <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[65px] h-[65px] lg:w-[160px] lg:h-[160px] rounded-full overflow-hidden border-[3px] border-white shadow-md z-10">
-               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6AmxcYf69F6xYV_FBFdbwiHYyyFXOHMdhdA&s" className="w-full h-full object-cover" />
-            </div>
-          </div>
-        </div>
+</section>
 
-
-        {/* ROW 2: FORM — Compact & Full Width */}
-        <div className="
-          col-span-2 lg:col-span-1
-          w-full mt-1
-          bg-[#E0F7FA] lg:bg-white
-          rounded-xl shadow-sm
-          p-4 lg:p-8
-          border border-teal-100 lg:border-gray-100
-        ">
-          <h2 className="text-[16px] lg:text-2xl font-extrabold text-black mb-2 text-center lg:text-left">
-            Get Rid of Gynecomastia
-          </h2>
-
-          <input
-            type="text"
-            placeholder="Your Name *"
-            className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2.5 mb-2.5 outline-none text-sm text-gray-700 focus:border-[#14967F]"
-          />
-          
-          <input
-            type="text"
-            placeholder="Mobile Number *"
-            className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2.5 mb-3 outline-none text-sm text-gray-700 focus:border-[#14967F]"
-          />
-
-          <button className="w-full bg-[#14967F] text-white font-bold py-2.5 rounded-lg text-[15px] shadow hover:opacity-90 transition">
-            Get Cost Estimate Now
-          </button>
-        </div>
-
-      </section>
 
 
       {/* 3. STATS SECTION — Compact Height */}
@@ -181,7 +206,7 @@ export default function Page() {
 
 
       {/* 4. WHY OPT SECTION — Compact List */}
-     <section className="w-full max-w-[1300px] mx-auto px-4 py-8">
+     <section className="w-full max-w-[1300px] mx-auto px-4 py-4">
         
         {/* GRID LAYOUT: 1 Column on Mobile, 2 Columns on Desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8">
@@ -290,10 +315,11 @@ export default function Page() {
 
           {/* CARD TEMPLATE */}
           {[ 
-            "https://ayoubplasticsurgery.com/wp-content/uploads/2015/12/westfield-ayoub-omaha-gynecomastica-patient23a.jpg",
-            "https://images.advancedplasticsurgeryinstitute.com/content/images/gynecomastia-368-front-thumbnail.jpg",
-            "https://images.plasticsurgeryak.com/content/images/gynecomastia-surgery-13-left-oblique-thumbnail.jpg",
-            "https://www.waterfronthospital.co.uk/nitropack_static/gycwWwfiJIQfiQufbflAmzWVvgpUeJdC/assets/images/optimized/rev-876bb26/www.waterfronthospital.co.uk/wp-content/uploads/2024/12/1-scaled.webp"
+            "/assets/diseases/sample1.webp",
+            "/assets/diseases/sample2.webp",
+            "/assets/diseases/sample3.webp",
+            "/assets/diseases/sample4.webp",
+      
           ].map((src, i) => (
             <div 
               key={i}
@@ -634,7 +660,7 @@ export default function Page() {
       </section>
 
 
-      <section className="w-full py-20 bg-white">
+      <section className="w-full py-0 bg-white">
         <div className="max-w-[1250px] mx-auto px-6">
 
           {/* Add space-y-10 for mobile spacing */}
@@ -763,7 +789,7 @@ export default function Page() {
 
 
       {/* ⭐ FAQ SECTION — Modern, Clean, Real-world Design ⭐ */}
-      <section className="w-full pt-8 pb-20 bg-white">
+      <section className="w-full pt-8 pb-0 bg-white">
         <div className="max-w-[950px] md:max-w-[1100px] lg:max-w-[1250px] mx-auto px-6">
 
           {/* HEADING */}
