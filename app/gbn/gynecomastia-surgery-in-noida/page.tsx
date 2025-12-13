@@ -29,53 +29,113 @@ export default function Page() {
 <section className="
   w-full max-w-[1300px] mx-auto
   px-3
-  pt-0.5
+  pt-0.5 md:pt-0      /* ↓ reduced top gap for both */
   pb-3
   grid grid-cols-2 lg:grid-cols-3
   gap-x-2 gap-y-2
-  items-start
-  md:items-center
+  items-center
   md:pb-6
 ">
 
-  {/* TEXT */}
-  <div className="flex flex-col justify-start">
-    <h1 className="
-      font-extrabold text-black
-      text-[18px] leading-[1.25] mb-2
-      md:text-[32px] lg:text-[42px]
-      md:leading-[1.1]
-    ">
+  {/* COL 1: TEXT CONTENT */}
+  <div className="col-span-1 flex flex-col justify-start mt-0">
+
+    {/* Heading — EXACT mobile match */}
+    <h1
+      className="
+       font-extrabold text-black
+
+    /* FLUID MOBILE HEADING */
+    text-[clamp(15px,4.2vw,18px)]
+    leading-[1.28]
+    mb-2
+
+    /* DESKTOP (unchanged) */
+    md:text-[32px]
+    lg:text-[42px]
+    md:leading-[1.1]
+    md:mb-4
+      "
+    >
       Permanent Surgery for
       <br />
-      Gynecomastia in <span className="text-[#2563EB]">Noida</span>
+      Gynecomastia in{" "}
+      <span className="text-[#2563EB]">Noida</span>
     </h1>
 
+    {/* Bullet List */}
     <ul className="space-y-1 text-black mb-3">
+
       <li className="flex items-start gap-2">
-        <span className="text-[#14967F] mt-[6px]">●</span>
-        <span className="text-[13px] font-medium">All Health Insurance Accepted</span>
+        <span className="text-[#14967F] text-[14px] leading-none mt-[6px]">●</span>
+        <span className="text-[13px] font-medium">
+          All Health Insurance Accepted
+        </span>
       </li>
+
       <li className="flex items-start gap-2">
-        <span className="text-[#14967F] mt-[6px]">●</span>
-        <span className="text-[13px] font-medium">Permanent Result</span>
+        <span className="text-[#14967F] text-[14px] leading-none mt-[6px]">●</span>
+        <span className="text-[13px] font-medium">
+          Permanent Result
+        </span>
       </li>
+
       <li className="flex items-start gap-2">
-        <span className="text-[#14967F] mt-[6px]">●</span>
-        <span className="text-[13px] font-medium">No-Cost EMI Available</span>
+        <span className="text-[#14967F] text-[14px] leading-none mt-[6px]">●</span>
+        <span className="text-[13px] font-medium">
+          No-Cost EMI Available
+        </span>
       </li>
+
     </ul>
+
+    {/* FREE CONSULTATION */}
+    <div className="
+      border border-[#0B3C5D]
+      rounded-md
+      px-3 py-1
+      inline-flex items-center gap-2
+      w-fit
+      bg-white
+    ">
+      <span className="font-bold text-[#0B3C5D] text-[10px] leading-tight">
+        FREE <br /> CONSULTATION
+      </span>
+
+      <svg
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#0B3C5D"
+        strokeWidth="2"
+      >
+        <path d="M6 3v12a4 4 0 0 0 8 0v-4" />
+        <path d="M14 11a4 4 0 0 0 8 0V5" />
+        <path d="M6 3a4 4 0 0 1 8 0" />
+      </svg>
+    </div>
+
   </div>
 
-  {/* IMAGE — SIZE UNTOUCHED */}
-  <div className="flex justify-center items-start">
+  {/* COL 2: IMAGE */}
+  <div
+    className="
+      col-span-1 
+      flex justify-center items-start
+      -mt-5          /* ↓ reduced but keeps same look */
+      md:mt-0
+    "
+  >
     <img
       src="/assets/diseases/Gynecomastia1.webp"
       className="
         w-full
         max-w-[410px]
-        scale-[1.22]
+        scale-[1.22]   /* slightly balanced */
         object-contain
+        -mt-2          /* ↓ softer pull */
+
         md:scale-100
         md:max-w-[480px]
         lg:max-w-[540px]
