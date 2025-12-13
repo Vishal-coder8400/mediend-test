@@ -880,17 +880,20 @@ export default function Page() {
     z-[9999]
   "
 >
-  <div className="
-    max-w-[1200px] mx-auto
-    px-4
-    py-4
-    text-center
-  ">
+  <div
+    className="
+      max-w-[1200px] mx-auto
+      px-4
+      py-5
+      text-center
+    "
+  >
 
     <h2
       className="
-        font-extrabold text-white mb-3
-        text-[clamp(16px,4.5vw,18px)]
+        font-extrabold text-white
+        mb-4
+        text-[clamp(17px,5vw,20px)]
       "
     >
       Get Free Doctor Consultation
@@ -899,10 +902,13 @@ export default function Page() {
     <button
       className="
         bg-[#14967F] text-white font-semibold
-              px-5 py-2.5 md:px-8 md:py-3
-              rounded-full text-sm md:text-base
-              w-[160px] md:w-auto mx-auto
-              hover:opacity-90 transition
+        px-6 py-3
+        md:px-9 md:py-3.5
+        rounded-full
+        text-[14px] md:text-[16px]
+        w-[180px] md:w-auto
+        mx-auto
+        hover:opacity-90 transition
       "
     >
       Book Now
