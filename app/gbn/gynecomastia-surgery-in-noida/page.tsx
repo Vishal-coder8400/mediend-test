@@ -24,94 +24,101 @@ export default function Page() {
           </button>
         </div>
       </div>
-
+<div className='pt-[70px]'></div>
 
 <section className="
   w-full max-w-[1300px] mx-auto
-  px-3 
-  pt-1 pb-3               /* ↓ reduced height */
-  grid grid-cols-2 lg:grid-cols-3 
-  gap-x-2 gap-y-2         /* ↓ smaller vertical gap */
+  px-3
+  pt-1 md:pt-0
+  pb-3
+  grid grid-cols-2 lg:grid-cols-3
+  gap-x-2 gap-y-2
   items-center
-  md:pt-0 md:pb-6         /* desktop stays SAME */
+  md:pb-6      /* desktop stays SAME */
 
 ">
 
   {/* COL 1: TEXT CONTENT */}
-  <div className="col-span-1 flex flex-col justify-start mt-1">
+ {/* COL 1: TEXT CONTENT */}
+<div className="col-span-1 flex flex-col justify-start mt-0 md:mt-2">
 
-    {/* Heading */}
-    <h1
-      className="
-        font-extrabold text-black leading-[1.15]
 
-        /* MOBILE */
-        text-[22px] mb-2
+  {/* Heading — EXACT mobile match */}
+  <h1
+    className="
+      font-extrabold text-black
 
-        /* DESKTOP RESTORE */
-        md:text-[32px] lg:text-[42px] md:leading-[1.1] md:mb-4
-      "
-    >
-      Permanent Surgery for <br />
-      Gynecomastia in <span className="text-[#2563EB]">Noida</span>
-    </h1>
+      /* MOBILE */
+      text-[18px]
+      leading-[1.25]
+      mb-2
 
-    {/* Bullet List — mobile = ✓, desktop = ● yellow */}
-    <ul className="space-y-1 font-semibold text-black mb-3">
+      /* DESKTOP (unchanged) */
+      md:text-[32px] lg:text-[42px]
+      md:leading-[1.1]
+      md:mb-4
+    "
+  >
+    Permanent Surgery for
+    <br />
+    Gynecomastia in{" "}
+    <span className="text-[#2563EB]">Noida</span>
+  </h1>
 
-      {/* Bullet 1 */}
-      <li className="flex items-center gap-2">
-        {/* MOBILE CHECKMARK */}
-        <span className="text-[#14967F] text-[18px] md:hidden">✓</span>
+  {/* Bullet List — EXACT like screenshot */}
+  <ul className="space-y-1 text-black mb-3">
 
-        {/* DESKTOP ORANGE BULLET */}
-        <span className="hidden md:inline-block text-orange-400 text-[22px]">●</span>
-
-        <span className="text-[14px] md:text-[18px]">
-          All Insurances Accepted
-        </span>
-      </li>
-
-      {/* Bullet 2 */}
-      <li className="flex items-center gap-2">
-        <span className="text-[#14967F] text-[18px] md:hidden">✓</span>
-        <span className="hidden md:inline-block text-orange-400 text-[22px]">●</span>
-
-        <span className="text-[14px] md:text-[18px]">
-          Permanent Result
-        </span>
-      </li>
-
-      {/* Bullet 3 */}
-      <li className="flex items-center gap-2">
-        <span className="text-[#14967F] text-[18px] md:hidden">✓</span>
-        <span className="hidden md:inline-block text-orange-400 text-[22px]">●</span>
-
-        <span className="text-[14px] md:text-[18px]">
-          No-Cost EMI Available
-        </span>
-      </li>
-
-    </ul>
-
-    {/* FREE CONSULTATION BADGE */}
-    <div className="
-      border border-[#062D4C] rounded-md px-3 py-1.5 
-      inline-flex items-center gap-1.5 w-fit 
-      bg-white shadow-sm
-    ">
-      <span className="font-bold text-[#062D4C] text-[10px] md:text-[12px] leading-tight">
-        FREE <br /> CONSULTATION
+    <li className="flex items-start gap-2">
+      <span className="text-[#14967F] text-[14px] leading-none mt-[6px]">●</span>
+      <span className="text-[13px] font-medium">
+        All Health Insurance Accepted
       </span>
+    </li>
 
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#062D4C" strokeWidth="2">
-        <path d="M6 3v12a4 4 0 0 0 8 0v-4" />
-        <path d="M14 11a4 4 0 0 0 8 0V5" />
-        <path d="M6 3a4 4 0 0 1 8 0" />
-      </svg>
-    </div>
+    <li className="flex items-start gap-2">
+      <span className="text-[#14967F] text-[14px] leading-none mt-[6px]">●</span>
+      <span className="text-[13px] font-medium">
+        Permanent Result
+      </span>
+    </li>
 
+    <li className="flex items-start gap-2">
+      <span className="text-[#14967F] text-[14px] leading-none mt-[6px]">●</span>
+      <span className="text-[13px] font-medium">
+        No-Cost EMI Available
+      </span>
+    </li>
+
+  </ul>
+
+  {/* FREE CONSULTATION — compact like mediEND */}
+  <div className="
+    border border-[#0B3C5D]
+    rounded-md
+    px-3 py-1
+    inline-flex items-center gap-2
+    w-fit
+    bg-white
+  ">
+    <span className="font-bold text-[#0B3C5D] text-[10px] leading-tight">
+      FREE <br /> CONSULTATION
+    </span>
+
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#0B3C5D"
+      strokeWidth="2"
+    >
+      <path d="M6 3v12a4 4 0 0 0 8 0v-4" />
+      <path d="M14 11a4 4 0 0 0 8 0V5" />
+      <path d="M6 3a4 4 0 0 1 8 0" />
+    </svg>
   </div>
+
+</div>
 
   {/* COL 2: IMAGE */}
 
@@ -848,7 +855,7 @@ export default function Page() {
 {/* 🌟 3. GET FREE DOCTOR CONSULTATION SECTION */}
 <section
   className="
-        w-full bg-[#14967F]
+        w-full bg-[#062D4C]
     py-3 md:py-5 lg:py-6
     fixed bottom-0 left-0 right-0
     md:sticky md:bottom-0 md:top-auto
@@ -870,7 +877,7 @@ export default function Page() {
 
     <button
       className="
-        bg-black text-white font-semibold
+        bg-[#14967F] text-white font-semibold
         inline-block
         px-4 py-1.5
         md:px-5 md:py-2
