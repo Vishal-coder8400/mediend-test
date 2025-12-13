@@ -66,28 +66,50 @@ export default function Page() {
     {/* Bullet List */}
     <ul className="space-y-1 text-black mb-3">
 
-      <li className="flex items-start gap-2">
-        <span className="text-[#14967F] text-[14px] leading-none mt-[6px]">●</span>
-        <span className="text-[13px] font-medium">
-          All Health Insurance Accepted
-        </span>
-      </li>
+  <li className="flex items-start gap-2">
+    <span className="text-[#14967F] text-[14px] leading-none mt-[6px]">●</span>
+    <span
+      className="
+        font-medium
+        text-[clamp(12px,3.4vw,13px)]   /* ✅ fluid text */
+        leading-[1.35]
+        whitespace-nowrap               /* ✅ force single line */
+      "
+    >
+      All Health Insurance Accepted
+    </span>
+  </li>
 
-      <li className="flex items-start gap-2">
-        <span className="text-[#14967F] text-[14px] leading-none mt-[6px]">●</span>
-        <span className="text-[13px] font-medium">
-          Permanent Result
-        </span>
-      </li>
+  <li className="flex items-start gap-2">
+    <span className="text-[#14967F] text-[14px] leading-none mt-[6px]">●</span>
+    <span
+      className="
+        font-medium
+        text-[clamp(12px,3.4vw,13px)]
+        leading-[1.35]
+        whitespace-nowrap
+      "
+    >
+      Permanent Result
+    </span>
+  </li>
 
-      <li className="flex items-start gap-2">
-        <span className="text-[#14967F] text-[14px] leading-none mt-[6px]">●</span>
-        <span className="text-[13px] font-medium">
-          No-Cost EMI Available
-        </span>
-      </li>
+  <li className="flex items-start gap-2">
+    <span className="text-[#14967F] text-[14px] leading-none mt-[6px]">●</span>
+    <span
+      className="
+        font-medium
+        text-[clamp(12px,3.4vw,13px)]
+        leading-[1.35]
+        whitespace-nowrap
+      "
+    >
+      No-Cost EMI Available
+    </span>
+  </li>
 
-    </ul>
+</ul>
+
 
     {/* FREE CONSULTATION */}
     <div className="
