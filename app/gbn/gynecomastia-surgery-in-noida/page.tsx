@@ -24,7 +24,9 @@ export default function Page() {
           </button>
         </div>
       </div>
-<div className='pt-[30px]'></div>
+{/* HEADER SPACER — MUST MATCH HEADER HEIGHT */}
+<div className="h-[60px]"></div>
+
 
 <section className="
   w-full max-w-[1300px] mx-auto
@@ -865,26 +867,30 @@ export default function Page() {
 </footer>
 
 {/* ⭐ Mobile safety spacer so footer doesn't hide sticky bar */}
-<div className="h-[85px] md:h-0"></div>
+{/* MOBILE SAFETY SPACER — PREVENTS FIXED CTA OVERLAP */}
+<div className="h-[120px] md:h-0"></div>
+
 
 {/* 🌟 3. GET FREE DOCTOR CONSULTATION SECTION */}
 <section
   className="
-        w-full bg-[#062D4C]
-    py-3 md:py-5 lg:py-6
+    w-full bg-[#062D4C]
     fixed bottom-0 left-0 right-0
-    md:sticky md:bottom-0 md:top-auto
+    md:sticky md:bottom-0
     z-[9999]
-
   "
 >
-  <div className="max-w-[1200px] mx-auto px-4 text-center">
+  <div className="
+    max-w-[1200px] mx-auto
+    px-4
+    py-4
+    text-center
+  ">
 
     <h2
       className="
-        text-[15px] font-extrabold text-white mb-2
-        md:text-[22px] lg:text-[24px]
-        md:mb-3 lg:mb-4
+        font-extrabold text-white mb-3
+        text-[clamp(16px,4.5vw,18px)]
       "
     >
       Get Free Doctor Consultation
@@ -893,15 +899,10 @@ export default function Page() {
     <button
       className="
         bg-[#14967F] text-white font-semibold
-        inline-block
-        px-4 py-1.5
-        md:px-5 md:py-2
-        lg:px-6 lg:py-2
-        rounded-full
-        text-[12px]
-        md:text-[14px] lg:text-[15px]
-        w-auto mx-auto
-        hover:opacity-90 transition
+              px-5 py-2.5 md:px-8 md:py-3
+              rounded-full text-sm md:text-base
+              w-[160px] md:w-auto mx-auto
+              hover:opacity-90 transition
       "
     >
       Book Now
@@ -909,6 +910,7 @@ export default function Page() {
 
   </div>
 </section>
+
 
 
 
