@@ -24,7 +24,7 @@ export default function Page() {
           </button>
         </div>
       </div>
-<div className='pt-[40px]'></div>
+<div className='pt-[30px]'></div>
 
 <section className="
   w-full max-w-[1300px] mx-auto
