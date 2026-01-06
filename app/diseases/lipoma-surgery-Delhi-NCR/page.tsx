@@ -816,6 +816,7 @@ export default function Page() {
   className="
     w-full bg-[#062D4C]
     fixed bottom-0 left-0 right-0
+    md:static
     md:sticky md:bottom-0
     z-[9999]
   "
@@ -823,15 +824,14 @@ export default function Page() {
   <div
     className="
       max-w-[1200px] mx-auto
-      px-4
-      py-0   /* ⬅ reduced from py-5 */
+      px-4 py-4
       text-center
     "
   >
     <h2
       className="
         font-extrabold text-white
-        mb-1   /* ⬅ reduced from mb-4 */
+        mb-2
         text-[clamp(16px,5vw,19px)]
       "
     >
@@ -841,12 +841,10 @@ export default function Page() {
     <button
       className="
         bg-[#14967F] text-white font-semibold
-        px-6 py-1.5   /* ⬅ reduced height */
-        md:px-8 md:py-3
+        px-6 py-2.5
         rounded-full
-        text-[14px] md:text-[15px]
-        w-[170px] md:w-auto
-        mx-auto
+        text-[14px]
+        w-[170px] mx-auto
         hover:opacity-90 transition
       "
     >
@@ -854,6 +852,7 @@ export default function Page() {
     </button>
   </div>
 </section>
+
 
     </>
   );
